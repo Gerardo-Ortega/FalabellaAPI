@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.1:20]","start":1647399334821,"end":1647399335668,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.1:20] 20:55:34.821-20:55:35.668 : Give breed, \"Happy path\""},{"id":2,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.2:21]","start":1647399335672,"end":1647399335948,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.2:21] 20:55:35.672-20:55:35.948 : Give breed, \"limit 0\""},{"id":3,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.3:22]","start":1647399335951,"end":1647399336197,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.3:22] 20:55:35.951-20:55:36.197 : Give breed, \"limit vacio\""},{"id":4,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.4:23]","start":1647399336200,"end":1647399336464,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.4:23] 20:55:36.200-20:55:36.464 : Give breed, \"limit null array\""},{"id":5,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.5:24]","start":1647399336467,"end":1647399336734,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.5:24] 20:55:36.467-20:55:36.734 : Give breed, \"limit espacio\""},{"id":6,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.6:25]","start":1647399336736,"end":1647399337018,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.6:25] 20:55:36.736-20:55:37.018 : Give breed, \"limit boundary\""},{"id":7,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.7:26]","start":1647399337020,"end":1647399337269,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.7:26] 20:55:37.020-20:55:37.269 : Give breed, \"limit incorrect character\""},{"id":8,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.8:27]","start":1647399337272,"end":1647399337530,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.8:27] 20:55:37.272-20:55:37.530 : Give breed, \"limit incorrect string\""},{"id":9,"group":1,"content":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.9:28]","start":1647399337533,"end":1647399337788,"title":"src\/main\/java\/com\/falabella\/Test\/Breeds[1.9:28] 20:55:37.533-20:55:37.788 : Give breed, \"limit especial character\""}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
